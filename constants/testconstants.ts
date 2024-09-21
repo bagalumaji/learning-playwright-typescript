@@ -1,0 +1,1 @@
+export const urlLambdaTestPlayground='https://www.lambdatest.com/selenium-playground/';
