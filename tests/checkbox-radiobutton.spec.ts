@@ -10,5 +10,12 @@ test.describe('check box and radio button', () => {
         await maleRadio.check();
         await expect(maleRadio).toBeChecked();
     })
-
+    test('check box button test', async ({page}) => {
+        await page.goto(urlLambdaTestPlayground);
+        await page.getByRole("link", {name: "Checkbox Demo"}).click();
+        const checkBoxClickOnCheckBox= page.locator("id=isAgeSelected");
+        await expect(checkBoxClickOnCheckBox).not.toBeChecked();
+        await checkBoxClickOnCheckBox.check();
+        await expect(checkBoxClickOnCheckBox).toBeChecked();
+    })
 })
