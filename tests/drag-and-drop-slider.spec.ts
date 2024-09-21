@@ -18,3 +18,18 @@ test('drag-and-drop-slider test', async ({page}) => {
         await page.waitForTimeout(300);
     }
 })
+test.only('slider - 2 test', async ({page}) => {
+    await page.goto("https://the-internet.herokuapp.com/horizontal_slider");
+    const slider = page.locator("input[type='range']");
+    await slider.click();
+    const valueLocator = page.locator("span#range");
+    let result= await valueLocator.textContent();
+    const finalValue=4;
+    console.log(result);
+    while(Number(result)<=finalValue){
+        await slider.press('ArrowRight');
+        result= await valueLocator.textContent();
+        console.log(result);
+        await page.waitForTimeout(1000);
+    }
+})
