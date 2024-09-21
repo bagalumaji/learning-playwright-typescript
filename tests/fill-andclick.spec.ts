@@ -1,8 +1,9 @@
 import {test, expect, Locator} from "@playwright/test";
+import {urlLambdaTestPlayground} from "../constants/testconstants";
 
 test.describe("fill and click", () => {
     test("fill and click button test", async ({page}) => {
-        await page.goto("https://www.lambdatest.com/selenium-playground/");
+        await page.goto(urlLambdaTestPlayground);
         await page.getByRole('link',{name:"Ajax Form Submit"}).click()
         await expect(page.getByRole('heading',{name:'Form Submit Demo'})).toBeVisible({timeout:15000});
         const textBoxTitle=page.locator("id=title");
