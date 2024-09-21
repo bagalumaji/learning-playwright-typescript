@@ -18,7 +18,7 @@ test('drag-and-drop-slider test', async ({page}) => {
         await page.waitForTimeout(300);
     }
 })
-test.only('slider - 2 test', async ({page}) => {
+test('slider - 2 test', async ({page}) => {
     await page.goto("https://the-internet.herokuapp.com/horizontal_slider");
     const slider = page.locator("input[type='range']");
     await slider.click();
